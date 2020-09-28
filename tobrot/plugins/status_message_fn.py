@@ -84,12 +84,14 @@ async def status_message_f(client, message):
         msg = "🤷‍♂️ No Active, Queued or Paused TORRENTs"
 
     currentTime = time.strftime("%H:%M:%S", time.gmtime(time.time() - BOT_START_TIME))   #ctrl-c & ctrl-v 😑
-    free = shutil.disk_usage(".")
-    
+    total, used, free = shutil.disk_usage(".")
+    total = humanbytes(total)
+    used = humanbytes(used)
     free = humanbytes(free)
 
     ms_g = f"<b>Bot Uptime</b>: <code>{currentTime}</code>\n" \
-        
+        f"<b>Total disk space</b>: <code>{total}</code>\n" \
+        f"<b>Used</b>: <code>{used}</code>\n" \
         f"<b>Free</b>: <code>{free}</code>\n"
 
     msg = ms_g + "\n" + msg
