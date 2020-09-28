@@ -85,7 +85,7 @@ async def status_message_f(client, message):
 
     currentTime = time.strftime("%H:%M:%S", time.gmtime(time.time() - BOT_START_TIME))   #ctrl-c & ctrl-v 😑
     free = shutil.disk_usage(".")
-   
+    
     free = humanbytes(free)
 
     ms_g = f"<b>Bot Uptime</b>: <code>{currentTime}</code>\n" \
