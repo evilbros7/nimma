@@ -90,9 +90,8 @@ async def status_message_f(client, message):
     free = humanbytes(free)
 
     ms_g = f"<b>Bot Uptime</b>: <code>{currentTime}</code>\n" \
-        f"<b>Total disk space</b>: <code>{total}</code>\n" \
-        f"<b>Used</b>: <code>{used}</code>\n" \
         f"<b>Free</b>: <code>{free}</code>\n"
+        
 
     msg = ms_g + "\n" + msg
     await message.reply_text(msg, quote=True)
